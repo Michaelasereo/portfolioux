@@ -1,3 +1,0 @@
-module.exports=[69771,a=>{a.v({className:"geist_9c6cb61b-module__8NX9hq__className",variable:"geist_9c6cb61b-module__8NX9hq__variable"})},33290,a=>{"use strict";var b=a.i(7997),c=a.i(69771);let d={className:c.default.className,style:{fontFamily:"'Geist', 'Geist Fallback'",fontStyle:"normal"}};null!=c.default.variable&&(d.variable=c.default.variable),a.s(["default",0,function({children:a}){return(0,b.jsx)("html",{lang:"en",children:(0,b.jsx)("body",{className:`${d.variable} antialiased`,children:a})})},"metadata",0,{title:"Portfolioux",description:"Figma-inspired portfolio homepage"}],33290)},70864,function(a){a.n(a.i(33290))}];
-
-//# sourceMappingURL=%5Broot-of-the-server%5D__1p01jpw._.js.map
