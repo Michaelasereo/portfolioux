@@ -7,6 +7,9 @@
   --surface: #f1f1f1;
   --surface-dark: #d9d9d9;
   --surface-overlay: #e8e8e8;
+  --stage-muted: #7b7b7b;
+  --stage-soft: #787878;
+  --chip-active: #e8e8e8;
   --font-helvetica: "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
@@ -29,4 +32,172 @@ body {
 button,
 a {
   color: inherit;
+}
+
+html.custom-cursor,
+html.custom-cursor * {
+  cursor: none !important;
+}
+
+@keyframes intro-from-left {
+  from {
+    opacity: 0;
+    transform: translateX(-1.5rem);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes intro-from-up {
+  from {
+    opacity: 0;
+    transform: translateY(0.85rem);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes intro-from-top {
+  from {
+    opacity: 0;
+    transform: translateY(-1.75rem);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.intro-left,
+.intro-up,
+.intro-nav {
+  animation-duration: 0.55s;
+  animation-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
+  animation-fill-mode: both;
+}
+
+.intro-left {
+  animation-name: intro-from-left;
+}
+
+.intro-up {
+  animation-name: intro-from-up;
+}
+
+.intro-nav {
+  animation-name: intro-from-top;
+  animation-delay: 0.28s;
+}
+
+.intro-showcase {
+  animation-delay: 0.04s;
+}
+
+.intro-ux {
+  animation-delay: 0.12s;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .intro-left,
+  .intro-up,
+  .intro-nav {
+    animation: none;
+  }
+}
+
+.nav-link {
+  display: inline-flex;
+  cursor: pointer;
+  transform-origin: center;
+  transition: transform 0.2s ease;
+}
+
+.nav-link:hover {
+  z-index: 2;
+  transform: scale(1.08);
+  animation: nav-zoom-shake 0.42s ease;
+}
+
+.hover-zoom {
+  cursor: pointer;
+  transform-origin: center;
+  transition: transform 0.25s ease;
+}
+
+.hover-zoom:hover {
+  z-index: 2;
+  transform: scale(1.02);
+}
+
+.logo-mark {
+  cursor: pointer;
+}
+
+.time-slide-frame {
+  overflow: hidden;
+}
+
+.time-slide {
+  display: block;
+  animation: time-slide-in 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+@keyframes time-slide-in {
+  0% {
+    opacity: 0;
+    transform: translateY(0.55rem);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes nav-zoom-shake {
+  0% {
+    transform: scale(1) rotate(0deg);
+  }
+
+  20% {
+    transform: scale(1.08) rotate(-3deg);
+  }
+
+  40% {
+    transform: scale(1.08) rotate(3deg);
+  }
+
+  60% {
+    transform: scale(1.08) rotate(-2deg);
+  }
+
+  80% {
+    transform: scale(1.08) rotate(1.5deg);
+  }
+
+  100% {
+    transform: scale(1.08) rotate(0deg);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .nav-link:hover {
+    animation: none;
+    transform: scale(1.04);
+  }
+
+  .hover-zoom:hover {
+    transform: scale(1.01);
+  }
+
+  .time-slide {
+    animation: none;
+  }
 }
